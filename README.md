@@ -23,6 +23,7 @@ Deliverables use the notation `#` for instance methods, and `.` for class method
 ### Initializers, Readers, and Writers
 - For these, the initialize is described as well was what attribute can(not) be changed after initialization. Use those descriptions to determine the appropriate readers and writers.
 
+
 #### Recipe
 - `Recipe#initialize(name, description)`
   - A recipe should be initialized with a `name` (string) and a `description` (string).
@@ -43,8 +44,8 @@ Deliverables use the notation `#` for instance methods, and `.` for class method
 #### RestaurantOwner
 - `RestaurantOwner#initialize(name, age)`
   - A restaurant_owner should be initialized with a `name` (string) and an `age` (integer).
-  - The name and star_rating can be changed after the restaurant_owner is initialized.
-  - Both name and star_rating are readable.
+  - The name and age can be changed after the restaurant_owner is initialized.
+  - Both name and age are readable.
 - `RestaurantOwner.all`
   - Returns an array of all restaurant_owner instances that have been created.
 
@@ -54,6 +55,7 @@ Deliverables use the notation `#` for instance methods, and `.` for class method
   - The price can be changed after the menu_item is initialized.
 - `MenuItem.all`
   - Returns an array of all menu_item instances that have been created.
+
 
 
 ### Object Relationship Methods
@@ -86,10 +88,19 @@ Deliverables use the notation `#` for instance methods, and `.` for class method
 - `MenuItem#owner`
   - returns the `Owner` instance associated with the `MenuItem` instance
 
+
+
 ### Aggregate and Association Methods
+
 #### Recipe
 - `Recipe#average_price`
-    - returns the average price for all `MenuItem` instances of this `Recipe` instance. 
+    - returns the average price (integer) for all `MenuItem` instances of this `Recipe` instance. 
+- `Recipe#highest_price`
+  - returns the highest price (integer) for all `MenuItem` instances of this `Recipe` instance. 
+- `Recipe#cheapest_restaurant`
+  - returns the `Restaurant` instance where this `Recipe` instance is the cheapest. 
+- `Recipe.inactive`
+  - returns an array of `Recipe` instances that are not currently being sold at any restaurants.
 
 #### Restaurant
 - `Restaurant#has_dish?(recipe)`
@@ -100,6 +111,8 @@ Deliverables use the notation `#` for instance methods, and `.` for class method
 #### RestaurantOwner
 - `RestaurantOwner.average_age`
   - returns the average age of all the `RestaurantOwner`s
+- `RestaurantOwner#sell_restaurant(restaurant, buyer)`
+  - transfers ownership of a `Restaurant` instance (which must belong to the current user) to the `buyer` which is a `RestaurantOwner` instance. 
 
 #### MenuItem
 - `MenuItem.most_expensive_item`
