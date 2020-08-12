@@ -20,6 +20,8 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
+**TESTING:** As you build ensure you are testing every method by running `ruby tools/console.rb`, creating instances, and checking each method one by one! 
+
 ### Initializers, Readers, and Writers
 - For these, the initialize is described as well was what attribute can(not) be changed after initialization. Use those descriptions to determine the appropriate readers and writers.
 
